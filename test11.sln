@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{24EF8192-BFF
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzzTests", "src\test\FizzBuzzTests.fsproj", "{9147ACD4-C6C1-450A-B8F0-D00989A997E9}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz", "src\app\FizzBuzz.fsproj", "{BB14C09F-506C-4F4E-ACAF-0778D9099055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +34,21 @@ Global
 		{9147ACD4-C6C1-450A-B8F0-D00989A997E9}.Release|x64.Build.0 = Release|Any CPU
 		{9147ACD4-C6C1-450A-B8F0-D00989A997E9}.Release|x86.ActiveCfg = Release|Any CPU
 		{9147ACD4-C6C1-450A-B8F0-D00989A997E9}.Release|x86.Build.0 = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|x64.Build.0 = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Debug|x86.Build.0 = Debug|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|x64.ActiveCfg = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|x64.Build.0 = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9147ACD4-C6C1-450A-B8F0-D00989A997E9} = {24EF8192-BFF3-476B-A2C3-20D7BC552B45}
+		{BB14C09F-506C-4F4E-ACAF-0778D9099055} = {24EF8192-BFF3-476B-A2C3-20D7BC552B45}
 	EndGlobalSection
 EndGlobal

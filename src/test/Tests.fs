@@ -8,5 +8,5 @@ let ``My test`` () =
     Assert.True(true)
 
 [<Fact>]
-let ``well lets hope this is actually`` () =
-    Assert.True(2 = 2)
+let ``convertNumber returns Fizz if number is divisible by 3`` () =
+    Assert.True("Fizz" = Program.convertNumber 3)
