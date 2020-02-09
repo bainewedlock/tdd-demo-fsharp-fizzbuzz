@@ -4,10 +4,12 @@ open System
 
 
 let convertNumber n =
-    "foo"
+  match n with
+  | 1 -> "1"
+  | _ -> "Fizz"
 
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+  printfn "Hello World from F#!"
+  0 // return an integer exit code
