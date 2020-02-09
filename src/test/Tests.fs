@@ -1,29 +1,37 @@
 module Tests
 
 open System
-open Xunit
 open Swensen.Unquote
 open FsCheck
 open FsCheck.Xunit
 
-
-[<Fact>]
-let ``My test`` () =
-    Assert.True(true)
-
-[<Fact>]
-let ``convertNumber returns the number if not divisible by 3 or 5`` () =
-    "1" =! Program.convertNumber 1
-
-[<Fact>]
-let ``convertNumber returns Fizz if number is divisible by 3`` () =
-    "Fizz" =! Program.convertNumber 3
-
-[<Fact>]
-let fstest_demo_1 () =
-    let revRevIsOrig (xs:list<int>) = List.rev(List.rev xs) = xs
-    Check.Quick revRevIsOrig
+[<Property>]
+let ``convertNumber returns the number if not divisible by 3 or 5`` (n:int) =
+    (n % 3 > 0 && n % 5 > 0) ==> lazy
+        (string n) =! Program.convertNumber n
 
 [<Property>]
-let fstest_demo_2 (xs:list<int>) =
-    List.rev(List.rev xs) = xs
+let ``convertNumber returns 'Fizz' if number is divisible by 3`` (n:PositiveInt) =
+    (n.Get % 3 = 0 && n.Get % 5 > 0) ==> lazy
+        "Fizz" =! Program.convertNumber n.Get
+
+[<Property>]
+let ``convertNumber returns 'Buzz' if number is divisible by 5`` (n:PositiveInt) =
+    (n.Get % 5 = 0 && n.Get % 3 > 0) ==> lazy
+        "Buzz" =! Program.convertNumber n.Get
+
+let makeDivisable n x =
+    match x % n with
+    | 0 -> x
+    | _ -> x * n
+
+[<Property>]
+let ``convertNumber returns 'FizzBuzz' if number is divisible by 3 and 5`` () =
+    let correct (PositiveInt x) =
+        x |> makeDivisable 3 |> makeDivisable 5
+    Arb.generate<PositiveInt>
+    |> Gen.map correct
+    |> Arb.fromGen
+    |> Prop.forAll <| fun x ->
+        "FizzBuzz" =! Program.convertNumber x
+    
