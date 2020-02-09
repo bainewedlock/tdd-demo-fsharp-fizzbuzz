@@ -1,6 +1,5 @@
 module Tests
-
-open System
+open Xunit
 open Swensen.Unquote
 open FsCheck
 open FsCheck.Xunit
@@ -35,3 +34,11 @@ let ``convertNumber returns 'FizzBuzz' if number is divisible by 3 and 5`` () =
     |> Prop.forAll <| fun x ->
         "FizzBuzz" =! Program.convertNumber x
     
+[<Property>]
+let ``generate returns list of specified size`` (size:NonNegativeInt) =
+    size.Get =! (Program.generate size.Get |> List.length)
+
+[<Fact>]
+let ``output joins list with spaces`` () =
+    "hallo welt" =! Program.output ["hallo"; "welt"]
+
